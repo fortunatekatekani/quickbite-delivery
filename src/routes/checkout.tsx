@@ -30,7 +30,7 @@ function CheckoutPage() {
 
   const restaurant = cart.restaurantId ? getRestaurant(cart.restaurantId) : undefined;
   const deliveryFee = restaurant?.deliveryFee ?? 0;
-  const serviceFee = cart.lines.length ? 1.5 : 0;
+  const serviceFee = cart.lines.length ? 10 : 0;
   const total = subtotal + deliveryFee + serviceFee;
 
   const submit = () => {
