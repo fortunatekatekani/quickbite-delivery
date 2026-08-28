@@ -58,7 +58,7 @@ export const restaurants: Restaurant[] = [
     rating: 4.8,
     reviews: 1240,
     deliveryMinutes: "20-30",
-    deliveryFee: 35.82,
+    deliveryFee: 35,
     priceLevel: "$$",
     tags: ["Burgers", "Fries", "Fast food"],
     menu: menu(
@@ -81,7 +81,7 @@ export const restaurants: Restaurant[] = [
     rating: 4.7,
     reviews: 980,
     deliveryMinutes: "25-35",
-    deliveryFee: 44.82,
+    deliveryFee: 45,
     priceLevel: "$$",
     tags: ["Pizza", "Italian"],
     menu: menu(
@@ -103,7 +103,7 @@ export const restaurants: Restaurant[] = [
     rating: 4.9,
     reviews: 2110,
     deliveryMinutes: "30-40",
-    deliveryFee: 62.82,
+    deliveryFee: 60,
     priceLevel: "$$$",
     tags: ["Sushi", "Japanese"],
     menu: menu(
@@ -146,7 +146,7 @@ export const restaurants: Restaurant[] = [
     rating: 4.5,
     reviews: 870,
     deliveryMinutes: "20-30",
-    deliveryFee: 26.82,
+    deliveryFee: 27,
     priceLevel: "$",
     tags: ["Tacos", "Mexican"],
     menu: menu(
@@ -167,7 +167,7 @@ export const restaurants: Restaurant[] = [
     rating: 4.7,
     reviews: 1520,
     deliveryMinutes: "25-35",
-    deliveryFee: 41.22,
+    deliveryFee: 40,
     priceLevel: "$$",
     tags: ["Ramen", "Noodles", "Asian"],
     menu: menu(
