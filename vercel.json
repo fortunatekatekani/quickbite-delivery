@@ -1,3 +1,5 @@
 {
-  "buildCommand": "npx tsr generate && npx tsc -b && npx vite build"
+  "buildCommand": "npx tsr generate && npx tsc -b && npx vite build",
+  "installComand" : "npm install",
+  "outputDirectory" : "dist"
 }
