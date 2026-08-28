@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Home, ShoppingBag, Receipt, User } from "lucide-react";
 import type { ReactNode } from "react";
 import { useCart } from "@/lib/cart";
+import { ViewToggle } from "@/components/ViewToggle";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const { itemCount } = useCart();
