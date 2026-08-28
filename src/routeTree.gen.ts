@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as DriverLoginRouteImport } from './routes/driver-login'
 import { Route as RestaurantLoginRouteImport } from './routes/restaurant-login'
 import { Route as OrdersIndexRouteImport } from './routes/orders.index'
 import { Route as OrdersIdRouteImport } from './routes/orders.$id'
@@ -39,6 +40,11 @@ const CartRoute = CartRouteImport.update({
 const CheckoutRoute = CheckoutRouteImport.update({
   id: '/checkout',
   path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DriverLoginRoute = DriverLoginRouteImport.update({
+  id: '/driver-login',
+  path: '/driver-login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RestaurantLoginRoute = RestaurantLoginRouteImport.update({
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/account': typeof AccountRoute
   '/cart': typeof CartRoute
   '/checkout': typeof CheckoutRoute
+  '/driver-login': typeof DriverLoginRoute
   '/restaurant-login': typeof RestaurantLoginRoute
   '/orders/$id': typeof OrdersIdRoute
   '/owner/menu': typeof OwnerMenuRoute
@@ -95,6 +102,7 @@ export interface FileRoutesByTo {
   '/account': typeof AccountRoute
   '/cart': typeof CartRoute
   '/checkout': typeof CheckoutRoute
+  '/driver-login': typeof DriverLoginRoute
   '/restaurant-login': typeof RestaurantLoginRoute
   '/orders/$id': typeof OrdersIdRoute
   '/owner/menu': typeof OwnerMenuRoute
@@ -109,6 +117,7 @@ export interface FileRoutesById {
   '/account': typeof AccountRoute
   '/cart': typeof CartRoute
   '/checkout': typeof CheckoutRoute
+  '/driver-login': typeof DriverLoginRoute
   '/restaurant-login': typeof RestaurantLoginRoute
   '/orders/$id': typeof OrdersIdRoute
   '/owner/menu': typeof OwnerMenuRoute
@@ -124,6 +133,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/cart'
     | '/checkout'
+    | '/driver-login'
     | '/restaurant-login'
     | '/orders/$id'
     | '/owner/menu'
@@ -137,6 +147,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/cart'
     | '/checkout'
+    | '/driver-login'
     | '/restaurant-login'
     | '/orders/$id'
     | '/owner/menu'
@@ -150,6 +161,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/cart'
     | '/checkout'
+    | '/driver-login'
     | '/restaurant-login'
     | '/orders/$id'
     | '/owner/menu'
@@ -164,6 +176,7 @@ export interface RootRouteChildren {
   AccountRoute: typeof AccountRoute
   CartRoute: typeof CartRoute
   CheckoutRoute: typeof CheckoutRoute
+  DriverLoginRoute: typeof DriverLoginRoute
   RestaurantLoginRoute: typeof RestaurantLoginRoute
   OrdersIdRoute: typeof OrdersIdRoute
   OwnerMenuRoute: typeof OwnerMenuRoute
@@ -201,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/checkout'
       fullPath: '/checkout'
       preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/driver-login': {
+      id: '/driver-login'
+      path: '/driver-login'
+      fullPath: '/driver-login'
+      preLoaderRoute: typeof DriverLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/restaurant-login': {
@@ -260,6 +280,7 @@ const rootRouteChildren: RootRouteChildren = {
   AccountRoute: AccountRoute,
   CartRoute: CartRoute,
   CheckoutRoute: CheckoutRoute,
+  DriverLoginRoute: DriverLoginRoute,
   RestaurantLoginRoute: RestaurantLoginRoute,
   OrdersIdRoute: OrdersIdRoute,
   OwnerMenuRoute: OwnerMenuRoute,
