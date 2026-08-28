@@ -48,7 +48,13 @@ function OwnerMenu() {
       toast.error("Add a name and a valid price");
       return;
     }
-    addMenuItem({ name: name.trim(), description: description.trim(), price: value, section, image });
+    addMenuItem({
+      name: name.trim(),
+      description: description.trim(),
+      price: value,
+      section,
+      ...(image ? { image } : {}),
+    });
     setName("");
     setPrice("");
     setDescription("");
