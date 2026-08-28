@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Home, ShoppingBag, Receipt, User } from "lucide-react";
 import type { ReactNode } from "react";
 import { useCart } from "@/lib/cart";
+import { ViewToggle } from "@/components/ViewToggle";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const { itemCount } = useCart();
@@ -15,6 +16,9 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-lg flex-col bg-background pb-20">
+      <div className="sticky top-0 z-30 border-b border-border bg-card/95 px-5 py-2 backdrop-blur">
+        <ViewToggle active="customer" />
+      </div>
       <main className="flex-1">{children}</main>
       <nav className="fixed inset-x-0 bottom-0 z-40 mx-auto max-w-lg border-t border-border bg-card/95 backdrop-blur [box-shadow:var(--shadow-float)]">
         <ul className="grid grid-cols-4">

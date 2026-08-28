@@ -17,6 +17,8 @@ import { Route as RestaurantLoginRouteImport } from './routes/restaurant-login'
 import { Route as OrdersIndexRouteImport } from './routes/orders.index'
 import { Route as OrdersIdRouteImport } from './routes/orders.$id'
 import { Route as OwnerIndexRouteImport } from './routes/owner.index'
+import { Route as OwnerMenuRouteImport } from './routes/owner.menu'
+import { Route as OwnerOrdersRouteImport } from './routes/owner.orders'
 import { Route as RestaurantIdRouteImport } from './routes/restaurant.$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +61,16 @@ const OwnerIndexRoute = OwnerIndexRouteImport.update({
   path: '/owner/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OwnerMenuRoute = OwnerMenuRouteImport.update({
+  id: '/owner/menu',
+  path: '/owner/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OwnerOrdersRoute = OwnerOrdersRouteImport.update({
+  id: '/owner/orders',
+  path: '/owner/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RestaurantIdRoute = RestaurantIdRouteImport.update({
   id: '/restaurant/$id',
   path: '/restaurant/$id',
@@ -72,6 +84,8 @@ export interface FileRoutesByFullPath {
   '/checkout': typeof CheckoutRoute
   '/restaurant-login': typeof RestaurantLoginRoute
   '/orders/$id': typeof OrdersIdRoute
+  '/owner/menu': typeof OwnerMenuRoute
+  '/owner/orders': typeof OwnerOrdersRoute
   '/restaurant/$id': typeof RestaurantIdRoute
   '/orders/': typeof OrdersIndexRoute
   '/owner/': typeof OwnerIndexRoute
@@ -83,6 +97,8 @@ export interface FileRoutesByTo {
   '/checkout': typeof CheckoutRoute
   '/restaurant-login': typeof RestaurantLoginRoute
   '/orders/$id': typeof OrdersIdRoute
+  '/owner/menu': typeof OwnerMenuRoute
+  '/owner/orders': typeof OwnerOrdersRoute
   '/restaurant/$id': typeof RestaurantIdRoute
   '/orders': typeof OrdersIndexRoute
   '/owner': typeof OwnerIndexRoute
@@ -95,6 +111,8 @@ export interface FileRoutesById {
   '/checkout': typeof CheckoutRoute
   '/restaurant-login': typeof RestaurantLoginRoute
   '/orders/$id': typeof OrdersIdRoute
+  '/owner/menu': typeof OwnerMenuRoute
+  '/owner/orders': typeof OwnerOrdersRoute
   '/restaurant/$id': typeof RestaurantIdRoute
   '/orders/': typeof OrdersIndexRoute
   '/owner/': typeof OwnerIndexRoute
@@ -108,6 +126,8 @@ export interface FileRouteTypes {
     | '/checkout'
     | '/restaurant-login'
     | '/orders/$id'
+    | '/owner/menu'
+    | '/owner/orders'
     | '/restaurant/$id'
     | '/orders/'
     | '/owner/'
@@ -119,6 +139,8 @@ export interface FileRouteTypes {
     | '/checkout'
     | '/restaurant-login'
     | '/orders/$id'
+    | '/owner/menu'
+    | '/owner/orders'
     | '/restaurant/$id'
     | '/orders'
     | '/owner'
@@ -130,6 +152,8 @@ export interface FileRouteTypes {
     | '/checkout'
     | '/restaurant-login'
     | '/orders/$id'
+    | '/owner/menu'
+    | '/owner/orders'
     | '/restaurant/$id'
     | '/orders/'
     | '/owner/'
@@ -142,6 +166,8 @@ export interface RootRouteChildren {
   CheckoutRoute: typeof CheckoutRoute
   RestaurantLoginRoute: typeof RestaurantLoginRoute
   OrdersIdRoute: typeof OrdersIdRoute
+  OwnerMenuRoute: typeof OwnerMenuRoute
+  OwnerOrdersRoute: typeof OwnerOrdersRoute
   RestaurantIdRoute: typeof RestaurantIdRoute
   OrdersIndexRoute: typeof OrdersIndexRoute
   OwnerIndexRoute: typeof OwnerIndexRoute
@@ -205,6 +231,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OwnerIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/owner/menu': {
+      id: '/owner/menu'
+      path: '/owner/menu'
+      fullPath: '/owner/menu'
+      preLoaderRoute: typeof OwnerMenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/orders': {
+      id: '/owner/orders'
+      path: '/owner/orders'
+      fullPath: '/owner/orders'
+      preLoaderRoute: typeof OwnerOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/restaurant/$id': {
       id: '/restaurant/$id'
       path: '/restaurant/$id'
@@ -222,6 +262,8 @@ const rootRouteChildren: RootRouteChildren = {
   CheckoutRoute: CheckoutRoute,
   RestaurantLoginRoute: RestaurantLoginRoute,
   OrdersIdRoute: OrdersIdRoute,
+  OwnerMenuRoute: OwnerMenuRoute,
+  OwnerOrdersRoute: OwnerOrdersRoute,
   RestaurantIdRoute: RestaurantIdRoute,
   OrdersIndexRoute: OrdersIndexRoute,
   OwnerIndexRoute: OwnerIndexRoute,
