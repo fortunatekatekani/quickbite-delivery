@@ -184,4 +184,4 @@ export const restaurants: Restaurant[] = [
 
 export const getRestaurant = (id: string) => restaurants.find((r) => r.id === id);
 
-export const currency = (n: number) => `$${n.toFixed(2)}`;
+export const currency = (n: number) => `R ${n.toFixed(2)}`;
