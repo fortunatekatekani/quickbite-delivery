@@ -32,10 +32,10 @@ const demoOrders: IncomingOrder[] = [
     customerName: "Naledi M.",
     address: "12 Rosebank Road, Apt 5",
     lines: [
-      { itemId: "gg-0", name: "Classic Cheeseburger", price: 9.5, qty: 2 },
-      { itemId: "gg-4", name: "Loaded Fries", price: 5.5, qty: 1 },
+      { itemId: "gg-0", name: "Classic Cheeseburger", price: 171, qty: 2 },
+      { itemId: "gg-4", name: "Loaded Fries", price: 99, qty: 1 },
     ],
-    total: 26.49,
+    total: 476.82,
     placedAt: Date.now() - 6 * 60_000,
   },
   {
@@ -43,8 +43,8 @@ const demoOrders: IncomingOrder[] = [
     restaurantId: "green-grill",
     customerName: "Peter H.",
     address: "8 Maple Street",
-    lines: [{ itemId: "gg-1", name: "Double Smash", price: 12.9, qty: 1 }],
-    total: 16.39,
+    lines: [{ itemId: "gg-1", name: "Double Smash", price: 232.2, qty: 1 }],
+    total: 295.02,
     placedAt: Date.now() - 22 * 60_000,
   },
   {
@@ -53,10 +53,10 @@ const demoOrders: IncomingOrder[] = [
     customerName: "Lerato S.",
     address: "44 Vine Avenue, Unit 2",
     lines: [
-      { itemId: "fv-0", name: "Margherita", price: 11, qty: 1 },
-      { itemId: "fv-3", name: "Garlic Focaccia", price: 5, qty: 2 },
+      { itemId: "fv-0", name: "Margherita", price: 198, qty: 1 },
+      { itemId: "fv-3", name: "Garlic Focaccia", price: 90, qty: 2 },
     ],
-    total: 24.49,
+    total: 440.82,
     placedAt: Date.now() - 40 * 60_000,
   },
   {
@@ -64,8 +64,8 @@ const demoOrders: IncomingOrder[] = [
     restaurantId: "sakura-house",
     customerName: "Thabo N.",
     address: "3 Harbour Lane",
-    lines: [{ itemId: "sh-1", name: "Rainbow Roll", price: 15.5, qty: 2 }],
-    total: 34.49,
+    lines: [{ itemId: "sh-1", name: "Rainbow Roll", price: 279, qty: 2 }],
+    total: 620.82,
     placedAt: Date.now() - 3 * 60_000,
   },
 ];
