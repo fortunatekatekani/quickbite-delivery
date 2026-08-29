@@ -19,7 +19,7 @@ export const Route = createFileRoute("/driver/earnings")({
       },
     ],
   }),
-  component: DriverEarnings;
+  component: DriverEarnings,
 });
 
 function DriverEarnings() {

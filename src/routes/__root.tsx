@@ -131,9 +131,11 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <CartProvider>
         <OwnerProvider>
-          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <Outlet />
-          <Toaster position="top-center" />
+          <DriverProvider>
+            {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+            <Outlet />
+            <Toaster position="top-center" />
+          </DriverProvider>
         </OwnerProvider>
       </CartProvider>
     </QueryClientProvider>
