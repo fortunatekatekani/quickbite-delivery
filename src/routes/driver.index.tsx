@@ -22,7 +22,7 @@ export const Route = createFileRoute("/driver/")({
       },
     ],
   }),
-  component: DriverRequests;
+  component: DriverRequests,
 });
 
 function DriverRequests() {

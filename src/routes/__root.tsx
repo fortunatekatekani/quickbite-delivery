@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CartProvider } from "../lib/cart";
 import { OwnerProvider } from "../lib/owner";
+import { DriverProvider } from "../lib/driver";
 import { Toaster } from "../components/ui/sonner";
 
 
@@ -130,9 +131,11 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <CartProvider>
         <OwnerProvider>
-          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <Outlet />
-          <Toaster position="top-center" />
+          <DriverProvider>
+            {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+            <Outlet />
+            <Toaster position="top-center" />
+          </DriverProvider>
         </OwnerProvider>
       </CartProvider>
     </QueryClientProvider>
